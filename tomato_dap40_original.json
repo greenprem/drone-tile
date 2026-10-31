@@ -1,0 +1,35 @@
+{
+  "crop": "tomato",
+  "dap": 40,
+  "stage": "flowering",
+  "ndvi": {
+    "stressed_max": 0.55,
+    "watch_min": 0.55,
+    "watch_max": 0.60,
+    "healthy_min": 0.60,
+    "bare_max": 0.15
+  },
+  "ndre": {
+    "stressed_max": 0.28,
+    "watch_min": 0.28,
+    "watch_max": 0.32,
+    "healthy_min": 0.32,
+    "bare_max": 0.0
+  },
+  "stress_rule": "both",
+  "prefer_plant_values": true,
+  "min_plant_pixels": 10,
+  "exclude_bare": true,
+  "require_vegetation": false,
+  "min_veg_share_pct": 10.0,
+  "require_plastic": true,
+  "min_plastic_pixels": 50,
+  "min_plastic_fraction": 0.05,
+  "cluster_enabled": true,
+  "cluster_distance_m": 1.0,
+  "cluster_keep": "most_stressed",
+  "basemap": "esri_imagery",
+  "marker_color": "#DC2626",
+  "map_title": "Tomato DAP 40 stressed hotspots (plastic rows)",
+  "note": "Tomato on plastic mulch at ~40 days after transplant, entering flowering. Canopy is largely closed, so plant-pixel NDVI/NDRE are used (not whole-tile means). Healthy plant NDVI is typically 0.60–0.70 and NDRE 0.32–0.38 at this stage; both indices must be below the stressed cut to flag a hotspot. DJI-calibrated reflectance."
+}

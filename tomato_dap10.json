@@ -1,0 +1,33 @@
+{
+  "crop": "tomato",
+  "dap": 10,
+  "stage": "establishment (after transplanting)",
+  "plant_ndvi_min": 0.4,
+  "ndvi": {
+    "stressed_max": 0.45,
+    "watch_min": 0.45,
+    "watch_max": 0.5,
+    "healthy_min": 0.5,
+    "bare_max": 0.15
+  },
+  "stress_rule": "ndvi",
+  "prefer_plant_values": true,
+  "min_plant_pixels": 10,
+  "exclude_bare": true,
+  "require_vegetation": false,
+  "min_veg_share_pct": 10.0,
+  "require_plastic": true,
+  "min_plastic_pixels": 50,
+  "min_plastic_fraction": 0.05,
+  "plastic_from_any_date": true,
+  "plant_pixels_in": "beds",
+  "flag_missing_plants": true,
+  "cluster_enabled": true,
+  "cluster_distance_m": 1.0,
+  "cluster_keep": "most_stressed",
+  "basemap": "esri_imagery",
+  "marker_color": "#DC2626",
+  "index_calculation": "DJI Mavic 3M reflectance (black level, vignetting, gain x exposure, SensorGainAdjustment, sunlight-sensor Irradiance); per-pixel NDVI/NDRE sampled every 1 cm; plant pixels = NDVI > plant_ndvi_min on the plastic beds; values corrected for position in the photo and referred to the photo centre (tile_stress.py --position-correction auto)",
+  "map_title": "Tomato DAP 10 stressed hotspots and missing-plant gaps (plastic rows)",
+  "note": "Tomato on plastic mulch ~10 days after transplanting. Seedlings are 3-8 cm, so plant pixels also contain soil or the planting hole and plant NDVI reads ~0.5-0.6. Only NDVI decides (stress_rule 'ndvi'): on the full farm, seedling NDRE differed by +-0.04 between neighbouring tiles - twice the width of a watch band - so it is mostly noise at this stage (it is still measured and reported). A plastic row with fewer than min_plant_pixels plant pixels in a tile is a 'gap' (missing or dead seedlings). require_vegetation stays off: seedlings cover ~2% of a tile. NDVI cuts are starting values - check them against plants in the field."
+}
